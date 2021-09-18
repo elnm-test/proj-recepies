@@ -1,0 +1,12 @@
+.navbar{
+    & > * {
+        padding: 0px 20px;
+        cursor: pointer;
+        transition: color 0.3s linear;
+        color: #6d6d6d;
+        font-weight: bold;
+    }
+    .selected-section{
+        color: var(--color-secondary);
+    }
+}

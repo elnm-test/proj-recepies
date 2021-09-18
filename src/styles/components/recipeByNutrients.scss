@@ -1,0 +1,39 @@
+.nut-search-container {
+    & > * {
+        margin-bottom: 10px;
+        @include flex-row-center;
+        flex-wrap: wrap;
+    }
+    label {
+        min-width: 80px;
+        max-width: 80px;
+        font-weight: bold;
+    }
+    input{
+       @include search-input;
+       max-height: 30px;
+       min-height: 30px;
+       max-width: 80px;
+       max-width: 80px;
+       margin-right: 20px;
+       border: none;
+       border-left: 2px solid var(--color-secondary);
+       text-align: center;
+    }
+}
+
+@media (max-width:900px) {
+    .nut-search-container{
+        align-self: flex-start;
+        width: 100%;
+
+        & > * {
+            width: 100%;
+            justify-content:flex-start;
+        }
+
+        input{
+            max-width: 40%;
+        }
+    }
+}

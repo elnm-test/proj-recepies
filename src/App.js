@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
+/* Views */
+import RecipeByIngredients from './views/RecipeByIngredients';
+import RecipeByNutrients from './views/RecipeByNutrients';
+import RecepieDetails from './views/RecepieDetails';
+import Homepage from './components/Homepage';
+import { connect } from 'react-redux';
+
+
+function App({ mealsByIng, mealsByNut }) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Homepage} />
+        <Route exact path="/ingredients" component={RecipeByIngredients} />
+        <Route exact path="/nutrients" component={RecipeByNutrients} />
+        <Route exact path="/recepie/:id" component={RecepieDetails} />
+      </Switch>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  const { mealsByIng, mealsByNut } = state.meals;
+  return {
+    mealsByIng,
+    mealsByNut
+  }
+}
+
+
+
+
+
+export default connect(mapStateToProps)(App);

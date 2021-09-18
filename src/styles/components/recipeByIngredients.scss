@@ -1,0 +1,58 @@
+.recepies-container{
+    padding-top: var(--default-top-padding);
+    background-color: rgba(0, 0, 0, 0.176);
+    .ing-search{
+        width: 100%;
+    }
+    ul.ing-list-wrapper{
+        max-height: 120px;
+        min-height: 120px;
+        align-content: flex-start;
+        & > *{
+            margin-bottom: 15px;
+            margin-right: 20px;
+            //Every li childrens
+            & > * {
+                margin-right: 20px;
+            }
+            .ing-txt{
+                text-transform: capitalize;
+                max-width: 80px;
+                min-width: 80px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+            .ing-icon{
+                color: var(--color-secondary);
+            }
+        }
+    }
+}
+
+@media (max-width:950px) {
+    .recepies-container{
+        
+        .ing-search{
+            max-width: 90%;
+        }
+    }
+
+}
+
+@media (max-width:900px) {
+    .recepies-container{
+        
+        .ing-search{
+            max-width: 100%;
+        }
+        ul.ing-list-wrapper{
+            align-self: flex-start;
+            & > *{
+                .ing-txt{
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}

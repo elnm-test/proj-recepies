@@ -1,0 +1,50 @@
+.recharts-responsive-container{
+    width: 450px !important;
+    height: 450px !important;
+
+    tspan{
+        font-weight: 100;
+        font-family: cursive;
+        fill: black;
+    }
+
+    .recharts-layer .recharts-polar-radius-axis-ticks{
+        display: none;
+    }
+
+    .radiusAxis{
+        stroke: none;
+    }
+    .recharts-polar-grid-angle{
+        line{
+            stroke: rgba(255, 255, 255, 0.65);
+        }
+    }
+    .recharts-polar-grid-concentric{
+        path{
+            stroke: white;
+        }
+    }
+    .recharts-layer .recharts-radar-polygon{
+        path{
+            fill: var(--color-primary);
+            stroke:var(--color-primary);
+            cursor: pointer;
+            transition: 0.3s linear;
+            &:hover{
+                fill: rgb(255,70,0);
+                stroke:rgb(255,70,0);
+            }
+        }
+    }
+}
+
+
+@media (max-width:500px) {
+    .recepie-details-container{
+        .recharts-responsive-container {
+            width: 300px  !important;
+            height: 265px !important;
+        }
+    }
+}

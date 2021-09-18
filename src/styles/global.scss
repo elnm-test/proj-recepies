@@ -1,0 +1,23 @@
+/* Style Setup */
+@import './setup/typo';
+@import './setup/vars';
+@import './setup/mixin';
+@import './setup/func';
+
+/* Style Basic */
+@import './basic/base';
+@import './basic/helpers';
+@import './basic/layout';
+
+/* Style Components */
+
+@import './components/header.scss';
+@import './components/navbar.scss';
+@import './components/homepage.scss';
+@import './components/recipeByIngredients.scss';
+@import './components/recipeByNutrients.scss';
+@import './components/appMainTemplate.scss';
+@import './components/contentSection.scss';
+@import './components/recepieDetails.scss';
+@import './components/TasteChart.scss';
+@import './components/spinnerT.scss';

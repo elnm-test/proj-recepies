@@ -1,0 +1,43 @@
+.homepage-container{
+    padding-top: var(--default-top-padding);
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.624);
+    h1{
+        font-size: 4rem;
+        color: white;
+        text-align: center;
+    }
+    .homepage-btn{
+        width: 250px;
+        padding: 15px 0px;
+        border: 2px solid #34a4ff;
+        background-color: #34a4ff;
+        color: white;
+        font-weight: bold;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        margin: 20px 40px;
+        border-radius: 200px;
+        cursor: pointer;
+        transition: all 0.3s linear;
+        @include flex-column-center;
+        &:hover{
+            background-color: var(--color-secondary);
+            border: 2px solid  var(--color-secondary);
+
+        }
+    }
+}
+
+@media (max-width:750px) {
+    .homepage-container{
+        padding: 10px;
+        h1{
+            font-size: 3rem;
+        }
+        .homepage-btns-container{
+            flex-direction: column;
+        }
+
+    }
+}

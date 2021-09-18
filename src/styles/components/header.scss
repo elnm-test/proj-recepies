@@ -1,0 +1,54 @@
+/* Header Style */
+header.app-header{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    padding: 20px;
+    max-height: var(--header-height);
+    background-color: transparent;
+    transition: all 0.3s ease-out;
+    z-index: 1;
+    color: var(--color-txt);
+    &.scroll{
+        background-color: white;
+    }
+}
+
+/* Logo Section Style */
+.logo-wrapper{
+    .img-logo{
+        max-width: 35px;
+        max-height: 35px;
+    }
+    .title-logo{
+        margin-left: 10px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        font-family: var(--base-font-title);
+        font-size: 1.2rem;
+        span{
+            color: var(--color-primary);
+            font-size: 2rem;
+            margin: 2px;
+            transition: all 0.4s linear;
+            &:nth-child(2){
+                color:var(--color-secondary);
+            }
+        }
+    }
+
+    //Logo Dots switching Colors mini effect when hovering
+    &:hover span{
+        &:nth-child(1){
+            color:var(--color-secondary);
+        }
+        &:nth-child(2){
+            color:var(--color-primary);
+        }
+    }
+}

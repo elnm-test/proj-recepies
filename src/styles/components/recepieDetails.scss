@@ -1,0 +1,162 @@
+.recepie-details-container{
+    padding: var(--default-top-padding) 20px 20px 20px;
+    min-height: 100vh;
+    height: 100%;
+    @include flex-column-center;
+    align-items: flex-start;
+    backdrop-filter: blur(7px);
+
+    .recepie-details-basic, .recepie-details-extend{
+        display: flex;
+        height: 100%;
+        & > * {
+            margin-bottom: 20px;
+        }
+        & > div:first-child{
+            flex: 3;
+            min-height: 350px;
+        }
+        & > div:last-child{
+            flex: 2;
+        }
+    }
+
+    h1{
+        font-size: 3rem;
+    }        
+    h2{
+        font-size: 2rem;
+        border-bottom: 3px solid black;
+        padding-bottom: 5px;
+        display: inline-block;
+    }
+    
+    .recepie-details-basic{
+        font-size: 1.1rem;
+
+
+        & > div:first-child > * {
+            margin-bottom: 10px;
+        }
+
+       .prep-time{
+            font-weight: bold;
+            margin-bottom: 3px;
+            color: var(--color-secondary);
+       }
+       .summary{
+            line-height: 1.4;
+       }
+
+       img{
+            max-width: 70%;
+            min-width: 70%;
+            max-height: 100%;
+            min-height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s linear;
+            object-fit: cover;
+        }   
+
+    }
+    .recepie-details-extend{
+        & > * { 
+            width: 100%;
+        }
+    
+        .instructions-container > * {
+            margin-bottom: 10px;
+       }
+
+       .instructions-general-data{
+           span{
+               font-weight: bold;
+               color: rgb(255, 40, 40);
+           }
+       }
+
+        .step-row{
+            @include elemnt-base-padding;
+            padding-left: 3px;
+            background-color: rgba(255, 255, 255, 0.719);
+            margin-bottom: 20px;
+            max-width:75%;
+            border-radius: 0px 10px 10px 0px;
+            transition: all 0.2s linear;
+            cursor: pointer;
+            &:hover {
+                transform:scale(1.05);
+                transform-origin: center;
+            }
+
+            &:hover .step-txt{
+                font-weight: bold;
+            }
+            
+        }
+        
+        .step-num{
+            min-width: 25px;
+            min-height: 25px;
+            border-radius: 200px;
+            background-color: var(--color-primary);
+            font-weight: bold;
+            color: white;
+            margin-right: 30px;
+            text-align: center;
+            @include flex-row-center;
+        }
+    }
+    .dish-type-tag{
+        background-color: var(--color-secondary);
+        color: white;
+        margin: 10px 15px 0px 0px;
+        border-radius: 200px;
+        text-transform: capitalize;
+
+        @include elemnt-base-padding;
+    }
+}
+
+
+@media (max-width:920px) {
+    .recepie-details-container{
+        .recepie-details-basic , .recepie-details-extend{
+            flex-direction: column;
+            font-size: 1rem;
+
+        }
+
+        .recepie-details-extend{
+            .step-row{
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .recepie-details-container{
+        .recepie-details-basic , .recepie-details-extend{
+            flex-direction: column;
+            font-size: 1rem;
+            img{
+                max-width: 100%;
+            }
+        }
+
+        .recepie-details-extend{
+            .step-row{
+                max-width: 100%;
+            }
+            .instructions-container > *{
+                margin-bottom: 25px;
+            }
+        }
+
+        .dish-type-tag{
+            border-radius: 0px;
+        }
+    }
+}
